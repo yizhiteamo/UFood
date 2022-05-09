@@ -1,0 +1,85 @@
+<!-- 收获地址 -->
+<view class="receive_address_row">
+    <view class="user_info_row">
+        <view class="user_info">
+            <view>{{address.userName}}</view>
+            <view>{{address.all}}</view>
+        </view>
+        <view class="user_phone">{{address.telNumber}}</view>
+    </view>
+</view>
+
+<!-- 购物车内容 -->
+<view class="cart_content">
+    <view class="cart_title">订单详情</view>
+        <!-- 结算 -->
+    <button class="order_button" type="primary" bindtap="showTimeModel" >
+        预约就餐
+    </button>
+    <view class="order_time">预约时间:{{yyTime}}</view>
+    <view class="cart_main">
+            <view class="cart_item"
+                wx:for="{{cart}}"
+                wx:key="goods_id">
+                <!-- 商品图片 -->
+                <navigator class="cart_img_wrap">
+                    <image mode="widthFix" src="{{item.pic_url}}" />
+                </navigator>
+                <!-- 商品信息 -->
+                <view class="cart_info_wrap">
+                    <view class="goods_name">{{item.name}}</view>
+                    <view class="goods_price_wrap">
+                        <view class="goods_price">￥{{item.price}}</view>
+                        <view class="cart_num_tool">
+                            <view class="goods_num">x {{item.num}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+    </view>
+</view>
+
+<!-- 底部工具栏 -->
+<view class="footer_tool">
+    <!-- 总价格 -->
+    <view class="total_price_wrap">
+        <view class="total_price">
+            合计: <text class="total_price_text">￥{{totalPrice}}</text>
+        </view>
+        <view></view>
+    </view>
+    <!-- 结算 -->
+    <view class="order_pay_wrap" bindtap="handleOrderPay">
+        支付({{totalNum}})
+    </view>
+
+</view>
+
+
+<!--日期弹出框-->
+<view class="modal {{timeShow?'modal_show':'modal_hide'}}">
+    <!-- 点击弹出框外部关闭弹出框 -->
+    <view class='modal_cancel' bindtap='modelCancel'></view>
+
+    <!-- 弹出框主体 -->
+    <view class='modal_container'>
+        <!-- 头部显示 -->
+        <view class='modal_header'>
+            <view>预定时间</view>
+            <view class='header_tip'>{{yyDay}}天内的预订</view>
+        </view>
+        <!-- 日期 -->
+        <view class="time">
+            <scroll-view class="time_scroll" scroll-x="true" >
+                <view data-index="{{index}}" bindtap="timeClick" class="scroll_item {{currentTab==index?'time_active':''}}" wx:for="{{timeList}}" wx:key="{{index}}">
+                    <view>{{item.name}}</view>
+                    <view>{{item.date}}</view>
+                </view>
+            </scroll-view>
+        </view>
+        <!-- 时间段 -->
+        <view class='hour'>
+            <view bindtap="hourClick" class="hour_item {{item.isShow?'':'hour_unactive'}} {{hourIndex==index?'hour_active':''}} " wx:for="{{hourList}}" wx:key="{{index}}" data-index="{{index}}" data-isshow="{{item.isShow}}">{{item.hour}}</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,53 @@
+page {
+  height: 100%;
+}
+.cates {
+  height: 100%;
+}
+.cates .cates_container {
+  height: calc( 100vh - 90rpx );
+  display: flex;
+}
+.cates .cates_container .left_menu {
+  flex: 2;
+}
+.cates .cates_container .left_menu .menu_item {
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+.cates .cates_container .left_menu .active {
+  color: var(--themeColor);
+  border-left: 5rpx solid currentColor;
+}
+.cates .cates_container .right_content {
+  flex: 5;
+}
+.cates .cates_container .right_content .shop_group .shop_list .shop .shop_item {
+  font-size: 32rpx;
+  color: #333333;
+  display: table;
+  width: auto;
+  white-space: nowrap;
+  border-spacing: 0.5rem 0;
+  margin-left: 28rpx;
+  margin-right: 28rpx;
+}
+.cates .cates_container .right_content .shop_group .shop_list .shop .shop_item::before,
+.cates .cates_container .right_content .shop_group .shop_list .shop .shop_item::after {
+  display: table-cell;
+  content: "";
+  width: 50%;
+  background: linear-gradient(#D8D8D8, #D8D8D8) repeat-x center;
+  background-size: 0.1rem 0.1rem;
+}
+.cates .cates_container .right_content .shop_group .shop_list navigator {
+  width: 100%;
+  text-align: center;
+}
+.cates .cates_container .right_content .shop_group .shop_list navigator image {
+  height: 100rpx;
+  width: 50%;
+}

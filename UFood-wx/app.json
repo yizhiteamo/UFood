@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/category/category",
+    "pages/cart/cart",
+    "pages/user/user",
+    "pages/goodsList/goodsList",
+    "pages/goodsDetail/goodsDetail",
+    "pages/login/login",
+    "pages/pay/pay",
+    "pages/collect/collect",
+    "pages/paySuccess/paySuccess",
+    "pages/search/search",
+    "pages/order/order"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#8467AD",
+    "navigationBarTitleText": "UFood",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#f4ecf5",
+    "backgroundColor": "#CAA3CD",
+    "borderStyle": "white",
+    "position": "bottom",
+    "selectedColor": "#A767AD",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icon/店铺未选中.png",
+        "selectedIconPath": "icon/店铺选中.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "icon/分类未选中.png",
+        "selectedIconPath": "icon/分类选中.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "icon/购物车未选中.png",
+        "selectedIconPath": "icon/购物车选中.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "icon/我的未选中.png",
+        "selectedIconPath": "icon/我选中.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

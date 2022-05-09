@@ -1,0 +1,51 @@
+<SearchInput></SearchInput>
+<view class="ufood_index">
+      <!-- 轮播图 -->
+      <view class="index_swiper">
+      <swiper autoplay="{{true}}" circular="{{true}}" interval="5000 " indicator-dots="{{true}}">
+            <swiper-item
+            wx:for="{{swiperList}}"
+            wx:key="*this">
+                  <navigator url="/pages/goodsDetail/goodsDetail?goods_no={{item.goods_no}}">
+                        <image src="{{item.swiper_url}}" mode="widthFix"/>
+                  </navigator>
+            </swiper-item>
+      </swiper>
+      </view>
+
+      <!-- 导航栏 -->
+      <view class="cate_box">
+            <view 
+            wx:for="{{cateList}}"
+            wx:key="id"
+            data-index="{{index}}" 
+            data-id="{{item.id}}" 
+            bindtap="handleCateNavi"
+            >
+                  <view class="cate_list">
+                        <view class="cate_column">
+                              <image mode="aspectFill" class="cate_img" src="{{item.icon_url}}" />
+                              <view class="cate_title">{{item.name}}</view>
+                        </view>
+                  </view>
+            </view>
+      </view>
+
+      <!-- 热门店铺 -->
+      <view class='shop'>
+            <view class="shop_list">热门店铺</view>
+      </view>
+      <navigator class="shop_item"
+      wx:for="{{popularShopList}}"
+      wx:key="shop_no"
+      url="/pages/goodsList/goodsList?shop_no={{item.shop_no}}">
+            <!-- 左侧 图片容器 -->
+            <view class="shop_img_wrap">
+                  <image mode="widthFix" src="{{item.shop_icon?item.shop_icon:'https://cdn.jsdelivr.net/gh/yizhiteamo/imgur/pixiv/illust_53727427_20180621_022730.jpg'}}" />
+            </view>
+            <!-- 右侧 商品容器 -->
+            <view class="shop_info_wrap">
+                  <view class="shop_name">{{item.name}}</view>
+            </view>
+      </navigator>
+</view>

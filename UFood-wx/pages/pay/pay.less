@@ -1,0 +1,228 @@
+page{
+    bottom: 90rpx;
+}
+.receive_address_row{
+    .user_info_row{
+        display: flex;
+        padding: 20rpx;
+        .user_info{
+            flex: 5;
+        }
+        .user_phone{
+            flex: 3;
+            text-align: right;
+        }
+    }
+}
+
+.cart_content{
+    .cart_title{
+        padding: 20rpx;
+        font-size: 36rpx;
+        color:var(--themeColor);
+        border-top: 1px solid currentColor;
+    }
+    .order_button{
+        width:100%;
+        bottom:0;
+    }
+    .order_time{
+        padding: 20rpx;
+        font-size: 36rpx;
+        color:var(--themeColor);
+        border-bottom: 1px solid currentColor;
+    }
+    .cart_main{
+        .cart_item{
+            display: flex;
+            padding: 10rpx;
+            border-bottom: 1rpx solid #ccc;
+            .cart_img_wrap{
+                flex: 2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                image{
+                    width:80%;
+                }
+            }
+
+            .cart_info_wrap{
+                flex: 4;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                .goods_name{
+                    display: -webkit-box;
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    color: #666;
+                }
+                .goods_price_wrap{
+                    display: flex;
+                    justify-content: space-between;
+                    .goods_price{
+                        color: var(--themeColor);
+                        font-size: 34rpx;
+                    }
+                    .cart_num_tool{
+                        display: flex;
+                        .goods_num{
+                            display: flex;
+                            width: 55rpx;
+                            height: 55rpx;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer_tool{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90rpx;
+    background-color: #fff;
+    display: flex;
+    border-top: 1px solid #ccc;
+    .total_price_wrap{
+        flex: 5;
+        text-align: right;
+        padding-right: 15rpx;
+        .total_price{
+            .total_price_text{
+                color: var(--themeColor);
+                font-size: 34rpx;
+                font-weight: 600;
+            }
+        }
+    }
+    .order_pay_wrap{
+        flex: 2;
+        background-color: var(--themeColor);
+        color: #fff;
+        font-size: 32rpx;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+/* 是否显示 */
+.modal_show {
+    display: block;
+}
+.modal_hide {
+    display: none;
+}
+
+/* 日期弹出框 */
+.modal {
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* 背景模板*/
+.modal_cancel {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+/* 弹出框主体 */
+.modal_container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background: #fff;
+}
+
+/* modal_header */
+.modal_header {
+    padding: 20rpx;
+    text-align: center;
+    font-size: 11pt;
+}
+/* header_tip */
+.header_tip {
+    position: relative;
+    font-size: 9pt;
+    color: #999;
+}
+
+/* time日期主体view */
+.time {
+    background: #f7f7f7;
+    text-align: center;
+    font-size: 11pt;
+}
+/* time日期主体滚动view */
+.time_scroll {
+    white-space: nowrap;
+    width: 100%;
+    height:100rpx;
+    line-height:50rpx;
+}
+
+.scroll-view-item {
+    height: 100rpx;
+}
+/* 日期 */
+.scroll_item {
+    display: inline-block;
+    padding: 0 40rpx;
+    height: 100rpx;
+    box-sizing: border-box;
+}
+
+/* time_active选择状态 */
+.time_active {
+    color: #159de3;
+    border-bottom: 4rpx solid #159de3;
+}
+
+/* 时间 */
+.hour {
+    padding: 20rpx 0 0 20rpx;
+}
+
+.hour_item {
+    width: 22%;
+    box-sizing: border-box;
+    height: 70rpx;
+    line-height: 70rpx;
+    border-radius: 10rpx;
+    text-align: center;
+    float: left;
+    border: 2rpx solid #eee;
+    font-size: 11pt;
+    margin-right: 3%;
+    margin-bottom: 20rpx;
+}
+
+/* hour_active*/
+
+.hour_active {
+    background: #159de3;
+    color: #fff;
+    border: 2rpx solid #159de3;
+}
+
+/* hour_unactive */
+
+.hour_unactive {
+    color: #999;
+}

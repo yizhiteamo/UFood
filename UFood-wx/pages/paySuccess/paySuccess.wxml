@@ -1,0 +1,5 @@
+<view class="no-goods">
+    <view class="title-box">支付成功</view>
+    <navigator class="to-index-btn" open-type="switchTab" url="/pages/category/category">继续逛逛</navigator>
+    <view style="position:absolute;bottom:10rpx;width:750rpx;"></view>
+</view>

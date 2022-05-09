@@ -1,0 +1,23 @@
+<Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+    <view class="collect_main">
+        <view class="collect_title">
+            <text class="collect_tips active" >收藏的商品</text>
+        </view>
+        <view class="collect_content">
+            <navigator class="goods_item"
+                wx:for="{{collect}}"
+                wx:key="goods_no"
+                url="/pages/goodsDetail/goodsDetail?goods_no={{item.goods_no}}">
+                <!-- 左侧 图片容器 -->
+                <view class="goods_img_wrap">
+                    <image mode="widthFix" src="{{item.pic_url?item.pic_url:'https://cdn.jsdelivr.net/gh/yizhiteamo/imgur/pixiv/illust_53727427_20180621_022730.jpg'}}" />
+                </view>
+                <!-- 右侧 商品容器 -->
+                <view class="goods_info_wrap">
+                    <view class="goods_name">{{item.name}}</view>
+                    <view class="goods_price">￥{{item.price}}</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</Tabs>

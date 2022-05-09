@@ -1,0 +1,103 @@
+.index_swiper{
+    swiper{
+        image{
+            width: 100%;
+        }
+    }
+}
+
+// .index_cate{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     margin-top: 0rpx;
+//     navigator{
+//         padding: 35rpx;
+//         flex: 1;
+//         image{
+//             width:100%;
+//         }
+//     }    
+// }
+
+.cate_box{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30rpx;
+    .cate_list{
+        width: 150rpx;
+        margin-top: 20rpx;
+        text-align: center;
+        display: inline-block;
+        overflow: hidden;
+        .cate_column{
+            width: 100%;
+            margin-top: 20rpx;
+            overflow: hidden;
+            .cate_img{
+                width: 80rpx;
+                height: 80rpx;
+            }
+            .cate_title{
+                font-size: 24rpx;
+                text-align: center;
+                margin-top: 10rpx;
+            }
+        }
+    }
+}
+
+.shop{
+    .shop_list{
+  font-size: 32rpx;
+  color: #333333;
+  display: table;
+  width: auto;
+  white-space: nowrap;
+  border-spacing: 0.5rem 0;
+  margin-left: 28rpx;
+  margin-right: 28rpx;
+    }
+    .shop_list::before,.shop_list::after {
+    display: table-cell;
+    content: "";
+    width: 50%;
+    background: linear-gradient(#D8D8D8, #D8D8D8) repeat-x center;
+    background-size: 0.1rem 0.1rem;
+    }
+}
+
+.shop_item{
+    background-color: #fff;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    
+    .shop_img_wrap{
+        flex: 2;
+        display: flex;
+        // 水平居中
+        justify-content: center;
+        // 垂直居中
+        align-content: center;
+        image{
+            height: 50%;
+        }
+    }
+    .shop_info_wrap{
+        flex: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-left: 50rpx;
+        background-color: #f2f2f2;
+        .shop_name{
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            color: var(--themeColor);
+        }
+    }
+}
+

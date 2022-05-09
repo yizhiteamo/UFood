@@ -1,0 +1,46 @@
+.shop_info{
+    .shop_loc{
+        color: var(--themeColor);
+        font-size: 32rpx;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        overflow: hidden;
+        border-bottom: 5rpx solid #ccc;
+        width: 100%;
+        height: 100rpx;
+        text-align: center;
+    }
+}
+.goods_list{
+    .goods_item{
+        display: flex;
+        border-bottom: 5rpx solid #ccc;
+        .goods_img_wrap{
+            
+            flex: 2;
+            display: flex;
+            // 水平居中
+            justify-content: left;
+            // 垂直居中
+            align-content: center;
+            image{
+                width: 70%;
+            }
+        }
+        .goods_info_wrap{
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            .goods_name{
+                display: -webkit-box;
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+            }
+            .goods_price{
+                color: var(--themeColor);
+                font-size: 32rpx;
+            }
+        }
+    }
+}

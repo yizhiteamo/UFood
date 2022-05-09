@@ -1,0 +1,25 @@
+.no-goods {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.no-goods .title-box {
+  width: 100%;
+  padding-top: 330rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #999;
+  background-size: 100rpx auto;
+  margin-bottom: 50rpx;
+}
+.no-goods .to-index-btn {
+  color: #fff;
+  background: var(--themeColor);
+  border-radius: 6px;
+  width: 300rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 28rpx;
+}

@@ -1,0 +1,61 @@
+page{
+    height: 100%;
+}
+
+.cates{
+    height: 100%;
+    .cates_container{
+        // less 中使用calc的时候需要注意
+        height: ~'calc( 100vh - 90rpx )';
+        display: flex;
+        .left_menu{
+            flex: 2;
+            .menu_item{
+                height: 80rpx;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 30rpx;
+            }
+            .active{
+                color: var(--themeColor);
+                border-left: 5rpx solid currentColor;
+            }
+        }
+        .right_content{
+            flex: 5;
+            .shop_group{
+                .shop_list{
+                    .shop{
+                        .shop_item{
+                            
+                      font-size: 32rpx;
+                      color: #333333;
+                      display: table;
+                      width: auto;
+                      white-space: nowrap;
+                      border-spacing: 0.5rem 0;
+                      margin-left: 28rpx;
+                      margin-right: 28rpx;
+                        }
+                        .shop_item::before,.shop_item::after {
+                        display: table-cell;
+                        content: "";
+                        width: 50%;
+                        background: linear-gradient(#D8D8D8, #D8D8D8) repeat-x center;
+                        background-size: 0.1rem 0.1rem;
+                        }
+                    }
+                    navigator{
+                        width: 100%;
+                        text-align: center;
+                        image{
+                            height: 100rpx;
+                            width: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
