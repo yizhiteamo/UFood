@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yizhiteamo.ufood.mapper.OrderMapper">
+
+    <!--  存储用户订单信息  -->
+    <insert id="setOrder">
+        insert into ufood.ufood_order (orderTime, userInfo, orderContent) values (#{orderTime}, #{userInfo}, #{orderContent})
+    </insert>
+
+    <!--  获取用户订单  -->
+    <select id="findOrderByUser" resultType="com.yizhiteamo.ufood.entity.Order">
+        select orderTime, userInfo, orderContent, createTime, status, id from ufood.ufood_order where userInfo = #{userInfo}
+    </select>
+
+    <update id="orderRefund">
+        update ufood.ufood_order set status = '已退款' where id = #{id}
+    </update>
+
+
+</mapper>

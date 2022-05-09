@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yizhiteamo.ufood.mapper.ShopMapper">
+
+    <resultMap id="shopCateMap" type="com.yizhiteamo.ufood.entity.ShopCate">
+        <id property="id" column="sc_id"></id>
+        <result property="category" column="sc_category"></result>
+
+        <collection property="shops" ofType="com.yizhiteamo.ufood.entity.Shop">
+            <id column="shop_no" property="shop_no"></id>
+            <result property="introduce" column="introduce"></result>
+            <result property="location" column="location"></result>
+            <result property="brief" column="brief"></result>
+            <result property="name" column="name"></result>
+            <result property="category" column="category"></result>
+            <result property="shop_icon" column="shop_icon"></result>
+        </collection>
+    </resultMap>
+
+    <!--  根据店铺类型查询数据  -->
+    <!--  这里不用别名的话,JSON数据会被覆盖!!!  -->
+    <select id="getShopAndCateList" resultMap="shopCateMap">
+        SELECT sc.id as sc_id, sc.category as sc_category,
+               s.shop_no, s.location, s.brief, s.name, s.category, s.shop_icon, s.popular
+        FROM ufood.ufood_shopcate sc
+        LEFT JOIN ufood.ufood_shop s
+        on sc.category = s.category
+    </select>
+
+    <!--  查询所有店铺数据  -->
+    <select id="findAll" resultType="com.yizhiteamo.ufood.entity.Shop">
+        select shop_no, location, brief, name, category, shop_icon from ufood.ufood_shop
+    </select>
+
+    <!--  查询所有店铺类型  -->
+    <select id="findCategory" resultType="com.yizhiteamo.ufood.entity.ShopCate">
+        SELECT id, category FROM ufood.ufood_shopcate
+    </select>
+
+    <!--  查询热门店铺  -->
+    <select id="getPopularShopList" resultType="com.yizhiteamo.ufood.entity.Shop">
+        select shop_no, location, brief, name, category, shop_icon from ufood.ufood_shop where popular = true
+    </select>
+
+    <!--  根据shop_no查询店铺信息  -->
+    <select id="getShopByNO" resultType="com.yizhiteamo.ufood.entity.Shop">
+        select shop_no, location, brief, name, category, shop_icon, popular from ufood.ufood_shop where shop_no = #{shop_no}
+    </select>
+
+</mapper>

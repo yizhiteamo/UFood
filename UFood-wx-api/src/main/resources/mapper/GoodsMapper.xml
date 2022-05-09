@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yizhiteamo.ufood.mapper.GoodsMapper">
+
+    <resultMap id="goodsAndSwiper" type="com.yizhiteamo.ufood.entity.Goods">
+        <id column="goods_no" property="goods_no"></id>
+        <result property="name" column="name"></result>
+        <result property="price" column="price"></result>
+        <result property="pic_url" column="pic_url"></result>
+        <result property="shop_no" column="shop_no"></result>
+        <result property="deleted" column="deleted"></result>
+        <result property="introduce" column="introduce"></result>
+        <result property="collected" column="collected"></result>
+        <result property="cart" column="cart"></result>
+
+        <collection property="swiperList" ofType="com.yizhiteamo.ufood.entity.Swiper">
+            <id property="id" column="us_id"></id>
+            <result property="swiper_url" column="us_pic_url"></result>
+            <result property="goods_no" column="us_goods_no"></result>
+        </collection>
+    </resultMap>
+
+    <!--  查询所有商品数据并返回相应商品的轮播图数据  -->
+    <select id="findGoodsByGoodsNO" resultMap="goodsAndSwiper">
+        select us.id as us_id, us.goods_no as us_goods_no, us.swiper_url as us_pic_url, ug.*
+        from ufood.ufood_goods ug left join ufood.ufood_swiper us on ug.goods_no = us.goods_no where ug.goods_no = #{goods_no}
+    </select>
+
+    <!--  分页查询商品数据  -->
+    <select id="findByPage" resultType="com.yizhiteamo.ufood.entity.Goods">
+        select * from ufood.ufood_goods where shop_no = #{shop_no} limit #{offset},#{pageSize}
+    </select>
+
+    <!--  模糊查询商品数据  -->
+    <select id="findByLike" resultType="com.yizhiteamo.ufood.entity.Goods">
+        select * from ufood.ufood_goods WHERE name like concat('%' ,#{name}, '%')
+    </select>
+
+    <!--  计算商品的总数  -->
+    <select id="countGoods" resultType="java.lang.Integer">
+        select count(goods_no) from ufood.ufood_goods
+    </select>
+
+    <!--  查询所有首页轮播图数据  -->
+    <select id="findIndexSwiper" resultType="com.yizhiteamo.ufood.entity.Swiper">
+        select * from ufood.ufood_swiper where index_swiper = true
+    </select>
+
+    <!--  点击收藏按钮 通过前台传过来的goods_no修改collected的值 且用ABS取绝对值来实现collected的取反 -->
+    <update id="collectGoods">
+        update ufood.ufood_goods set collected=ABS(collected-1) where goods_no = #{goods_no}
+    </update>
+
+
+</mapper>
