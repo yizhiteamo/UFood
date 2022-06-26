@@ -46,10 +46,10 @@ Page({
 
   // 页面上滑 滚动条触底事件
   onReachBottom(){
-    if(this.QueryParams.pagenum >= this.totalPages){
+    if(this.QueryParams.pageNum >= this.totalPages){
       wx.showToast({title: '我也是有底线的 >_<'});
     }else{
-      this.QueryParams.pagenum++;
+      this.QueryParams.pageNum++;
       this.getGoodsList();
     }
   },
