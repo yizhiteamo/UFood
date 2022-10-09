@@ -38,7 +38,3 @@ PS: 服务器过期了，就不展示线上版本了_(:з」∠)_
 小程序模块和后台模块可在 request.js 文件中，按照本地端口的设置修改对应的端口配置。
 因小程序部署分包限制大小，该程序中的大部分图片均上传至<a href="https://cloud.tencent.com/product/cos">腾讯云COS图床</a>。
 若要部署到 nignx 上，请将小程序的后台端口设置为443端口，并保证当前域名配置了SSL证书。
-
-### 版权声明
-
-该项目依据<a href="https://github.com/shaojintian/Best_README_template/blob/master/LICENSE.txt"> MIT 授权许可</a>。
